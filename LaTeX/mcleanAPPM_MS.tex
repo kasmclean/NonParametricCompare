@@ -1,0 +1,81 @@
+\documentclass[defaultstyle,11pt]{thesis}
+
+\usepackage{amssymb}		% to get all AMS symbols
+\usepackage{graphicx}		% to insert figures
+\usepackage{hyperref}		% PDF hyperreferences??
+
+%%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
+
+\title{Smooth Operator:\\ Comparison of Smoothness Across Classes of Non-Parametric Estimators}
+
+\author{K.~M.}{McLean}
+
+\otherdegrees{B.S. Physics, University of Texas at Dallas, 2007 \\
+          B.S. Computer Science, University of Texas at Dallas, 2007 \\
+	      M.A. Economics, University of Colorado Boulder, 2018}
+
+\degree{Master of Science}		%  #1 {long descr.}
+	{M.S., Applied Math}		%  #2 {short descr.}
+
+\dept{Department of}			%  #1 {designation}
+	{Applied Mathematics}		%  #2 {name}
+
+\advisor{Prof.}				%  #1 {title}
+	{Carlos Martins-Filho}			%  #2 {name}
+
+\reader{Prof.~Vanja Dukic}		%  2nd person to sign thesis
+\readerThree{Assist.~Prof.~Adam McCloskey}		%  3rd person to sign thesis
+
+\abstract{  \OnePageChapter	% because it is very short
+
+	Often the abstract will be long enough to require
+	more than one page, in which case the macro
+	``$\backslash$OnePageChapter'' should {\it not}
+	be used.
+
+	But this one isn't, so it should.
+	}
+
+\dedication[Dedication]{	% NEVER use \OnePageChapter here.
+	To all of the fluffy kitties.
+	}
+
+\acknowledgements{	\OnePageChapter	% *MUST* BE ONLY ONE PAGE!
+	Here's where you acknowledge folks who helped.
+	But keep it short, i.e., no more than one page,
+	as required by the Grad School Specifications.
+	}
+
+% \IRBprotocol{E927F29.001X}	% optional!
+
+\ToCisShort	% use this only for 1-page Table of Contents
+
+\LoFisShort	% use this only for 1-page Table of Figures
+% \emptyLoF	% use this if there is no List of Figures
+
+\LoTisShort	% use this only for 1-page Table of Tables
+% \emptyLoT	% use this if there is no List of Tables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%       BEGIN DOCUMENT...         %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\input macros.tex
+\input appmCh1.tex
+\input appmCh2.tex
+
+%%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
+\bibliographystyle{plain}	% or "siam", or "alpha", etc.
+\nocite{*}		% list all refs in database, cited or not
+\bibliography{appmRefs}		% Bib database in "refs.bib"
+
+%%%%%%%%%   then the Appendices, if any   %%%%%%%%%
+\appendix
+\input appmAppendixA.tex
+\input appmAppendixB.tex
+
+
+\end{document}
+
