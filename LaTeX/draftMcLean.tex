@@ -1,0 +1,38 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{amssymb}
+\usepackage{fullpage} % changes the margin
+\usepackage{titling} % to add subtitle
+
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+%\linespread{1.0} % single spacing
+%\linespread{1.3} % 1.5 spacing
+\linespread{1.6} % double spacing
+
+\title{APPM Thesis Draft}
+\author{K. McLean}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+
+The parameter $\lambda$ for the class of linear predictors $\mathbf{\hat{Y}}=\mathbf{S}(\lambda)\mathbf{Y}$ where $\mathbf{\hat{Y}}$ is a column vector of estimates, $\mathbf{S}(\lambda)$ is an $n\times n$ linear smoother matrix dependent on $\lambda$ and $\mathbf{Y}$ is a column vector of regressands, has different domains depending on the non-parametric estimator type of $\mathbf{S}(\lambda)$. For kernel density estimators, $\lambda$ is frequently denoted as $h$, with $h \in [0,\infty)$. For spline estimators, $\lambda$ is called $k$, with $k \in \mathbb{N}$. So comparing $h$ to $k$ directly is not feasible, especially considering the effects of choosing specific kernels and spline order. 
+
+$\lambda$ is commonly chosen by cross-validation of the specific estimator. In Monte Carlo simulations, the mean squared error (MSE) of the estimators are compared with no attention paid to how much smoothness that choice of $\lambda$ imparts on the data above and beyond other estimator choices. Cross-validation also introduces a dependency of $\lambda$ on $\mathbf{X}$ (the $n \times m$ matrix of regressors) and $\mathbf{Y}$.
+
+To maintain the exogeneity of the choice of $\lambda$ (and therefore the independence of $\mathbf{S}(\lambda)$), let us establish a function indexed by $\lambda$ that maps $\mathbf{S}(\lambda)\rightarrow \mathbb{R}$, $f_h:\mathbf{S_1}(h)\rightarrow \mathbb{R}$ and $f_k:\mathbf{S_2}(k)\rightarrow \mathbb{R}$ where the images to be the same when $\mathbf{S_1}(h)$ and $\mathbf{S_2}(k)$ impart the same amount of smoothness. After fixing the value of the image, we invert $f_h$ and $f_k$ to find the specific $h$ and $k$ that would have the specified degree of smoothness. Now comparing MSEs between estimators of equivalent smoothness is a fair comparison. We choose $f_\lambda$ to be the trace of 
+$\textbf{S}(\lambda)$, which is the number of parameters estimated in linear models. The estimator therefore imparts more smoothness as $f_\lambda \rightarrow \infty$ and less smoothness as $f_\lambda \rightarrow 0$. The best estimator (the one with the lowest MSE) may not remain the same for different amounts of smoothness.
+
+\section*{Model Set-Up}
+
+For linear predictors $\hat{Y} = \mathbf{S}(\lambda)Y$, where $\lambda$ is the pertinent smoothing parameter (either number of knots for splines or bandwidth for kernel density estimators).
+
+\end{document}
